@@ -1,0 +1,18 @@
+{
+    "name": "dell/docverify",
+    "autoload": {
+        "psr-4": {
+            "Dell\\Docverify\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ipanz",
+            "email": "ivanyosa27@gmail.com"
+        }
+    ],
+    "require": {
+        "setasign/fpdi": "^2.6",
+        "setasign/fpdf": "^1.9"
+    }
+}
