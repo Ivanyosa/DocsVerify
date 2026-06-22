@@ -1,203 +1,204 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>DOCVERIFY</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-
-        body{
-            background:#f4f6f9;
+        body {
+            background: #f4f6f9;
         }
 
-        .hero-card{
-            border:none;
-            border-radius:20px;
+        .hero-card {
+            border: none;
+            border-radius: 20px;
         }
 
-        .logo-box{
-            width:90px;
-            height:90px;
-            border-radius:50%;
-            background:#0d6efd;
-            color:white;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:40px;
-            margin:auto;
+        .logo-box {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #0d6efd;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: auto;
         }
 
-        .btn-custom{
-            min-width:170px;
+        .btn-custom {
+            min-width: 170px;
         }
-
     </style>
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container">
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
 
-        <span class="navbar-brand fw-bold">
-            DOCVERIFY
-        </span>
+            <span class="navbar-brand fw-bold">
+                DOCVERIFY
+            </span>
 
-    </div>
-</nav>
+        </div>
+    </nav>
 
-<div class="container mt-5">
+    <div class="container mt-5">
 
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
 
-        <div class="col-lg-8">
+            <div class="col-lg-8">
 
-            <div class="card hero-card shadow">
+                <div class="card hero-card shadow">
 
-                <div class="card-body p-5">
+                    <div class="card-body p-5">
 
-                    <div class="text-center mb-4">
+                        <div class="text-center mb-4">
 
-                        <div class="logo-box">
-                            🔒
-                        </div>
+                            <div class="logo-box">
+                                🔒
+                            </div>
 
-                        <h2 class="mt-3 fw-bold">
-                            Sistem Verifikasi Dokumen Digital
-                        </h2>
+                            <h2 class="mt-3 fw-bold">
+                                Sistem Verifikasi Dokumen Digital
+                            </h2>
 
-                        <p class="text-muted">
-                            Upload dokumen PDF, buat QR Code otomatis,
-                            dan verifikasi keaslian dokumen menggunakan
-                            algoritma SHA-256.
-                        </p>
-
-                    </div>
-
-                    <form
-                        action="upload.php"
-                        method="POST"
-                        enctype="multipart/form-data">
-
-                        <div class="mb-4">
-
-                            <label class="form-label fw-semibold">
-                                Pilih Dokumen PDF
-                            </label>
-
-                            <input
-                                type="file"
-                                name="pdf"
-                                accept=".pdf"
-                                class="form-control form-control-lg"
-                                required>
+                            <p class="text-muted">
+                                Upload dokumen PDF, buat QR Code otomatis,
+                                dan verifikasi keaslian dokumen menggunakan
+                                algoritma SHA-256.
+                            </p>
 
                         </div>
 
-                        <div class="d-flex flex-wrap gap-2">
+                        <form
+                            action="upload.php"
+                            method="POST"
+                            enctype="multipart/form-data">
 
-                            <button
-                                type="submit"
-                                class="btn btn-success btn-lg btn-custom">
+                            <div class="mb-4">
 
-                                Upload Dokumen
+                                <label class="form-label fw-semibold">
+                                    Pilih Dokumen PDF
+                                </label>
 
-                            </button>
+                                <input
+                                    type="file"
+                                    name="pdf[]"
+                                    accept=".pdf"
+                                    multiple
+                                    class="form-control form-control-lg"
+                                    required>
+                            </div>
 
-                            <a
-                                href="list.php"
-                                class="btn btn-primary btn-lg btn-custom">
+                            <div class="d-flex flex-wrap gap-2">
 
-                                Daftar Dokumen
+                                <button
+                                    type="submit"
+                                    class="btn btn-success btn-lg btn-custom">
 
-                            </a>
+                                    Upload Dokumen
 
-                            <a
-                                href="logs.php"
-                                class="btn btn-dark btn-lg btn-custom">
+                                </button>
 
-                                Riwayat Verifikasi
+                                <a
+                                    href="list.php"
+                                    class="btn btn-primary btn-lg btn-custom">
 
-                            </a>
+                                    Daftar Dokumen
 
-                        </div>
+                                </a>
 
-                    </form>
+                                <a
+                                    href="logs.php"
+                                    class="btn btn-dark btn-lg btn-custom">
 
-                </div>
+                                    Riwayat Verifikasi
 
-            </div>
+                                </a>
 
-            <div class="row mt-4">
+                            </div>
 
-                <div class="col-md-4">
-
-                    <div class="card border-0 shadow-sm">
-
-                        <div class="card-body text-center">
-
-                            <h1>
-                                🔐
-                            </h1>
-
-                            <h6 class="fw-bold">
-                                SHA-256
-                            </h6>
-
-                            <small class="text-muted">
-                                Menjamin integritas dokumen.
-                            </small>
-
-                        </div>
+                        </form>
 
                     </div>
 
                 </div>
 
-                <div class="col-md-4">
+                <div class="row mt-4">
 
-                    <div class="card border-0 shadow-sm">
+                    <div class="col-md-4">
 
-                        <div class="card-body text-center">
+                        <div class="card border-0 shadow-sm">
 
-                            <h1>
-                                📱
-                            </h1>
+                            <div class="card-body text-center">
 
-                            <h6 class="fw-bold">
-                                QR Code
-                            </h6>
+                                <h1>
+                                    🔐
+                                </h1>
 
-                            <small class="text-muted">
-                                Verifikasi cepat melalui scan QR.
-                            </small>
+                                <h6 class="fw-bold">
+                                    SHA-256
+                                </h6>
+
+                                <small class="text-muted">
+                                    Menjamin integritas dokumen.
+                                </small>
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
+                    <div class="col-md-4">
 
-                <div class="col-md-4">
+                        <div class="card border-0 shadow-sm">
 
-                    <div class="card border-0 shadow-sm">
+                            <div class="card-body text-center">
 
-                        <div class="card-body text-center">
+                                <h1>
+                                    📱
+                                </h1>
 
-                            <h1>
-                                ✔️
-                            </h1>
+                                <h6 class="fw-bold">
+                                    QR Code
+                                </h6>
 
-                            <h6 class="fw-bold">
-                                Validasi
-                            </h6>
+                                <small class="text-muted">
+                                    Verifikasi cepat melalui scan QR.
+                                </small>
 
-                            <small class="text-muted">
-                                Mendeteksi perubahan dokumen.
-                            </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="card border-0 shadow-sm">
+
+                            <div class="card-body text-center">
+
+                                <h1>
+                                    ✔️
+                                </h1>
+
+                                <h6 class="fw-bold">
+                                    Validasi
+                                </h6>
+
+                                <small class="text-muted">
+                                    Mendeteksi perubahan dokumen.
+                                </small>
+
+                            </div>
 
                         </div>
 
@@ -211,7 +212,6 @@
 
     </div>
 
-</div>
-
 </body>
+
 </html>
